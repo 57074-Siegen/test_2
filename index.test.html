@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PureLife – Produkte</title>
+
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --primary: #3b82f6;
+      --radius: 18px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.06);
+      --font: system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* HEADER */
+    .header {
+      background: #fff;
+      padding: 14px 18px;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .menu-btn {
+      font-size: 24px;
+      background: none;
+      border: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      padding: 10px 0;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 32px 18px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* FILTERS */
+    .filters {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .filter-chip {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .filter-chip.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .sort-select {
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+    }
+
+    /* PRODUCTS */
+    .products {
+      padding: 20px 18px 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .product-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: var(--radius);
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 600;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">PureLife</div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#">Produkte</a>
+    <a href="#">Über uns</a>
+    <a href="#">Wissen</a>
+    <a href="#">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Natürliche Ergänzungen für deinen Alltag</h1>
+  <p>Wissenschaftlich entwickelt. Minimalistisch formuliert. Für Energie, Fokus und Wohlbefinden.</p>
+</section>
+
+<section class="filters">
+  <div class="filter-row">
+    <button class="filter-chip active">Alle</button>
+    <button class="filter-chip">Energie</button>
+    <button class="filter-chip">Immunsystem</button>
+    <button class="filter-chip">Regeneration</button>
+  </div>
+
+  <select class="sort-select">
+    <option>Sortieren: Empfohlen</option>
+    <option>Preis aufsteigend</option>
+    <option>Preis absteigend</option>
+    <option>Neuheiten</option>
+  </select>
+</section>
+
+<section class="products">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4ccdc20?w=800" alt="">
+      <h3>Immun Boost</h3>
+      <p class="desc">Vitamin C, Zink und Pflanzenextrakte für tägliche Abwehrkraft.</p>
+      <div class="meta">
+        <span class="price">19,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800" alt="">
+      <h3>Energy Focus</h3>
+      <p class="desc">Guarana, B‑Vitamine und L‑Theanin für klare Konzentration.</p>
+      <div class="meta">
+        <span class="price">24,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07c?w=800" alt="">
+      <h3>Omega‑3 Algenöl</h3>
+      <p class="desc">Hochreines DHA & EPA aus nachhaltiger Algenquelle.</p>
+      <div class="meta">
+        <span class="price">17,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600180758890-6d9f1c5b5f5a?w=800" alt="">
+      <h3>Magnesium Komplex</h3>
+      <p class="desc">Drei Magnesiumformen für Muskeln, Nerven & Regeneration.</p>
+      <div class="meta">
+        <span class="price">14,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1582719478250-4b3d6b7a3e02?w=800" alt="">
+      <h3>Night Restore</h3>
+      <p class="desc">Magnesium & Pflanzenstoffe für erholsame Nächte.</p>
+      <div class="meta">
+        <span class="price">21,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4ccdc20?w=800" alt="">
+      <h3>Vitamin D3 + K2</h3>
+      <p class="desc">Für Immunsystem, Knochen & Energie – perfekt kombiniert.</p>
+      <div class="meta">
+        <span class="price">12,90 €</span>
+        <button class="btn">Kaufen</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  btn.addEventListener("click", () => nav.classList.toggle("open"));
+</script>
+
+</body>
+</html>
